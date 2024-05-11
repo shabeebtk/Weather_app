@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import AuthLogin from "../../components/user/AuthLogin";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from 'react-hot-toast';
 
 function LoginPage() {
 

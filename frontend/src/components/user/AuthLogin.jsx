@@ -11,6 +11,7 @@ import { googleLogout, useGoogleLogin } from '@react-oauth/google';
 // redux 
 import { useDispatch } from 'react-redux';
 import { userLogin } from '../../redux/action/userAuthAction';
+import toast from 'react-hot-toast';
 
 
 function AuthLogin() {
@@ -19,6 +20,7 @@ function AuthLogin() {
     const [profile, setProfile] = useState(null)
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const successNotification = (message) => toast.success(message);
 
     useEffect(
         () => {
@@ -48,6 +50,7 @@ function AuthLogin() {
                                 console.log(response.data)
                                 dispatch(userLogin(response.data.user))
                                 localStorage.setItem('token', response.data.token)
+                                successNotification('login success')
                             })
                             .catch((error) => {
                                 console.log(error)
@@ -70,7 +73,7 @@ function AuthLogin() {
                 <h1 className='font-bold'>Weather App</h1>
             </div>
             <div className='flex justify-center items-center h-100 h-[80vh]'>
-                <div className='hover:cursor-help border px-5 py-2 hover:bg-slate-600'>
+                <div className='hover:cursor-pointer border px-5 py-2 hover:bg-slate-600'>
                     <button onClick={login}>Sign in with Google 🚀 </button>
                 </div>
             </div>

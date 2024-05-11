@@ -6,6 +6,7 @@ import { googleLogout } from '@react-oauth/google'
 import { useDispatch } from 'react-redux'
 import { userLogout } from '../../redux/action/userAuthAction'
 import { useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 function WeatherCard() {
 
@@ -16,6 +17,7 @@ function WeatherCard() {
     const user = useSelector(state => state.userAuth.user)
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const errorToast = (message) => toast.error(message)
 
     console.log(user)
 
@@ -30,10 +32,11 @@ function WeatherCard() {
                 })
                 .catch((error) => {
                     console.log(error);
-                    weatherDetails(null)
+                    setWeatherDetails(null)
                     if (error.response.status == 404) {
                         setErrorMessage('City not found')
                     }
+                    errorToast('city not found')
                 })
                 .finally(() => {
                     setLoader(false)

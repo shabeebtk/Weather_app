@@ -17,7 +17,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='' element={<LoginPage/>}></Route>
+          <Route path='' element={<LoginPage />}></Route>
           <Route path='/dashboard' element={<UserProtectedRoute element={Dashboard} />}></Route>
           <Route path='/admin/' element={<AdminProtectedRoute element={AdminHomePage} />}></Route>
         </Routes>
