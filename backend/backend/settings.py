@@ -43,10 +43,8 @@ INSTALLED_APPS = [
     
     # 3rd party apps
     'rest_framework',
-    'rest_framework_simplejwt',
+    'rest_framework.authtoken',
     'corsheaders',
-    'allauth',
-    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -58,18 +56,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
 ]
 
+# rest framework conf 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ]
-}
-
-SIMPLE_JWT = {
-    'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
-    'AUTH_TOKEN_CLASSES': ['rest_framework_simplejwt.tokens.AccessToken'],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
+    ],
 }
 
 ROOT_URLCONF = 'backend.urls'
@@ -106,28 +99,6 @@ DATABASES = {
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173'
 ]
-
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'SCOPE': [
-            'https://www.googleapis.com/auth/userinfo.profile',
-            'https://www.googleapis.com/auth/userinfo.email',
-        ],
-        'AUTH_PARAMS': {
-            'access_type': 'offline',
-        }
-    }
-}
-
-SOCIALACCOUNT_LOGIN_ONSIGNUP = True  
-
-SITE_ID = 1  
-LOGIN_REDIRECT_URL = '/'  
-ACCOUNT_LOGOUT_REDIRECT_URL = '/'  
-
-# Google App credentials
-GOOGLE_CLIENT_ID = ''
-GOOGLE_SECRET_KEY = ''
 
 
 # Password validation

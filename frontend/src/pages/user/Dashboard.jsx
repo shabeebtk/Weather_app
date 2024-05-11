@@ -1,4 +1,4 @@
-import WeatherCard from "../components/WeatherCard"
+import WeatherCard from "../../components/user/WeatherCard"
 
 function Dashboard(){
     return(

@@ -1,1 +1,1 @@
-export const clientId = '468987322176-f05kj6j6dvjj1fq6b7ghcg72nme3d4j9.apps.googleusercontent.com'
+export const clientId = import.meta.env.VITE_CLIENT_ID
