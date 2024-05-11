@@ -16,8 +16,8 @@ To run the project locally, follow these steps:
 ### Clone the Repository
 
 ```bash
-git clone (https://github.com/shabeebtk/Weather_app.git)
-cd your-repository
+git clone https://github.com/shabeebtk/Weather_app.git
+cd Weather_app
 ```
 
 ### Backend Setup (Django)
