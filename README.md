@@ -6,13 +6,6 @@ Welcome to the Django and React Weather Application! This project combines the p
 
 To run the project locally, follow these steps:
 
-### Prerequisites
-
-- Python (3.7 or higher)
-- Node.js
-- npm or yarn
-- Git
-
 ### Clone the Repository
 
 ```bash
