@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux'
 import { userLogout } from '../../redux/action/userAuthAction'
 import { useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
+import { WeatherApiKey } from '../../constant/WeatherApiKey'
 
 function WeatherCard() {
 
@@ -19,12 +20,10 @@ function WeatherCard() {
     const navigate = useNavigate()
     const errorToast = (message) => toast.error(message)
 
-    console.log(user)
-
     const handleCheckWeather = async () => {
         if (city) {
             setLoader(true)
-            await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=2cb57432de328507888aa733caaf7b28`)
+            await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${WeatherApiKey}`)
                 .then((response) => {
                     console.log(response.data)
                     setWeatherDetails(response.data)
@@ -78,7 +77,7 @@ function WeatherCard() {
                     <div className="flex items-center justify-center">
                         {weatherDetails ?
                             <div className="relative w-[fit-content]">
-                                <div className="relative w-52 h-60 flex flex-col items-center justify-between p-5 rounded-lg bg-opacity-30 backdrop-blur-30 bg-gray-300 border border-white cursor-pointer">
+                                <div className="relative w-60 h-80 flex flex-col items-center justify-between p-5 rounded-lg bg-opacity-30 backdrop-blur-30 bg-gray-300 border border-white cursor-pointer">
                                     <div className='flex flex-col items-center justify-center'>
                                         {!errorMessage ?
                                             <>
@@ -92,6 +91,9 @@ function WeatherCard() {
 
                                         }
 
+                                    </div>
+                                    <div>   
+                                        <img src={`https://openweathermap.org/img/wn/${weatherDetails.weather[0].icon}@2x.png`} alt="" />
                                     </div>
                                     <p className="text-4xl text-white">{weatherDetails ? kelvinToCelsius(weatherDetails.main.temp) + '°' : ''}</p>
                                     <div className="w-full flex items-center justify-between">
