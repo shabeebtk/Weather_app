@@ -16,7 +16,7 @@ To run the project locally, follow these steps:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/your-repository.git
+git clone (https://github.com/shabeebtk/Weather_app.git)
 cd your-repository
 ```
 
