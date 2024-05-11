@@ -18,58 +18,70 @@ To run the project locally, follow these steps:
 ```bash
 git clone https://github.com/yourusername/your-repository.git
 cd your-repository
-Backend Setup (Django)
+```
+
+### Backend Setup (Django)
 Create a virtual environment:
 
-bash
+```bash
 Copy code
 python -m venv venv
-Activate the virtual environment:
+```
+
+### Activate the virtual environment:
 
 On Windows:
-bash
+```bash
 Copy code
 venv\Scripts\activate
 On macOS and Linux:
 bash
 Copy code
 source venv/bin/activate
+```
+
 Install Python dependencies:
 
-bash
+```bash
 Copy code
 pip install -r requirements.txt
+```
+
 Apply database migrations:
 
-bash
+```bash
 Copy code
 python manage.py migrate
-(Optional) Create a superuser:
-
-bash
+```
+Create a superuser:
+```bash
 Copy code
 python manage.py createsuperuser
+```
 Run the Django development server:
 
-bash
+```bash
 Copy code
 python manage.py runserver
 The backend will be running at http://localhost:8000.
+```
 
 Frontend Setup (React)
 Navigate to the frontend directory:
 
-bash
+```bash
 Copy code
 cd frontend
+```
 Install npm packages:
 
-bash
+```bash
 Copy code
 npm install   # or yarn install
+```
 Run the React development server:
 
-bash
+```bash
 Copy code
 npm start   # or yarn start
 The frontend will be running at http://localhost:3000.
