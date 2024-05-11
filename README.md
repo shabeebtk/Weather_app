@@ -24,7 +24,6 @@ cd your-repository
 Create a virtual environment:
 
 ```bash
-Copy code
 python -m venv venv
 ```
 
@@ -32,56 +31,48 @@ python -m venv venv
 
 On Windows:
 ```bash
-Copy code
 venv\Scripts\activate
+```
 On macOS and Linux:
-bash
-Copy code
+```bash
 source venv/bin/activate
 ```
 
 Install Python dependencies:
 
 ```bash
-Copy code
 pip install -r requirements.txt
 ```
 
 Apply database migrations:
 
 ```bash
-Copy code
 python manage.py migrate
 ```
 Create a superuser:
 ```bash
-Copy code
 python manage.py createsuperuser
 ```
 Run the Django development server:
 
 ```bash
-Copy code
 python manage.py runserver
-The backend will be running at http://localhost:8000.
+The backend will be running at http://127.0.0.1:8000.
 ```
 
 Frontend Setup (React)
 Navigate to the frontend directory:
 
 ```bash
-Copy code
 cd frontend
 ```
 Install npm packages:
 
 ```bash
-Copy code
-npm install   # or yarn install
+npm install 
 ```
 Run the React development server:
 
 ```bash
-Copy code
-npm start   # or yarn start
-The frontend will be running at http://localhost:3000.
+npm run dev  
+The frontend will be running at http://localhost:5173.
